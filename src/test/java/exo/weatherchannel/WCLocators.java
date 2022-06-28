@@ -25,4 +25,5 @@ public class WCLocators {
     public static final By SUNRISE_VALUE = By.cssSelector("[data-testid='UVIndexValue']");
     public static final By SUNSET_LABEL = By.xpath("//div[.='UV Index']");
     public static final By SUNSET_VALUE = By.cssSelector("[data-testid='UVIndexValue']");
+    public static final By HOURLY_TRENDS = By.cssSelector(".HourlyForecast--Card--1OYs4");
 }

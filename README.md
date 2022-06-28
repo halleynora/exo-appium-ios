@@ -1,5 +1,5 @@
 ## Caveats
-I had to go the route of using the mobile browser on a device and not a mobile app because I am a Android user and don't own a iOS device to test with.  
+For iOS, I had to go the route of using the mobile browser on a device and not a mobile app because I am a Android user and don't own a iOS device to test with.  
 On iOS simulators you don't have access to the app store and there is not a way for me to gain access to the .app or .ipa file for the weather app.  
 This project will not build successfully until you have the correct local environment setup with either a simulator or actual connected device and edit the 
 serentity.conf properties with your device settings.

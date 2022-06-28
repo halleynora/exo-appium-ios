@@ -11,27 +11,6 @@ import exo.weatherchannel.WCSearchActions;
 import java.net.MalformedURLException;
 
 public class SearchStepDefinitions {
-//
-//    @Given("{actor} is researching things on the internet")
-//    public void researchingThings(Actor actor) {
-//        actor.wasAbleTo(NavigateTo.theWeatherChannelHomePage());
-//    }
-//
-//    @When("{actor} looks up {string}")
-//    public void searchesFor(Actor actor, String term) {
-//        actor.attemptsTo(
-//                LookForInformation.about(term)
-//        );
-//    }
-//
-//    @Then("{actor} should see information about {string}")
-//    public void should_see_information_about(Actor actor, String term) {
-//        actor.attemptsTo(
-//                Ensure.that(WikipediaArticle.HEADING).hasText(term)
-//        );
-//    }
-
-    WeatherChannelHomePage weatherChannelHomePage;
 
     @Steps
     NavigateTo navigateTo;
@@ -81,7 +60,7 @@ public class SearchStepDefinitions {
 
     @Then("assert in Today's Details that Pressure has a value")
     public void assertInTodaySDetailsThatPressureHasAValue() {
-        wcSearchActions.pressureDisplayedValue():
+        wcSearchActions.pressureDisplayedValue();
     }
 
     @Then("assert in Today's Details that UV Index has a value")

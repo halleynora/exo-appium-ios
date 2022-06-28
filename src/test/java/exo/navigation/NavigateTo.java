@@ -22,16 +22,12 @@ public class NavigateTo {
 
 
     public void theWeatherChannelHomePage() throws MalformedURLException {
-
-
         if (mobileBrowser == "iOS") {
            iosDriver = new IOSDriver(new URL("http://127.0.0.1:4723/wd/hub"), caps);
         } else if (mobileBrowser == "android") {
             androidDriver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), caps);
         }
-
     }
-
 
     @BeforeEach
     void setUp() throws MalformedURLException {
@@ -49,8 +45,7 @@ public class NavigateTo {
         String deviceNameIOS = (String) environmentVariables.getProperty("ios-capabilites.deviceName");
         String browserIOS = (String) environmentVariables.getProperty("ios-capabilites.browser");
 
-
-
+        //Setting capabilities based on what mobile driver is specified in serenity.conf file
         if (mobileBrowser.equalsIgnoreCase("iOS")) {
             //        45681C4C-410C-45B0-9FAB-4F78645B4564
             caps.setCapability("platformName", mobileBrowser);
@@ -59,7 +54,6 @@ public class NavigateTo {
             caps.setCapability(CapabilityType.BROWSER_NAME, browserIOS);
             //            caps.setCapability("app", "/Users/halleyshort/Library/Developer/Xcode/DerivedData/WebDriverAgent-ciegwgvxzxdrqthilmrmczmqvrgu/Build/Products/Debug-iphonesimulator/IntegrationApp.app");
         } else if (mobileBrowser.equalsIgnoreCase("android")) {
-
             caps.setCapability(MobileCapabilityType.PLATFORM_NAME, mobileBrowser);
             caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, platformVersinAndorid);
             caps.setCapability(MobileCapabilityType.DEVICE_NAME, deviceNameAndroid);
