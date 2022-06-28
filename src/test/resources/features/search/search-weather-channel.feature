@@ -1,4 +1,4 @@
-Feature: Search by keyword
+Feature: Weather Channel App
 
   Scenario: Searching for a city
     Given Weather Channel home page is loaded
