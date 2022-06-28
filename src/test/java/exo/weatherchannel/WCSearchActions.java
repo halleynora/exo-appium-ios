@@ -35,4 +35,22 @@ public class WCSearchActions extends UIInteractionSteps {
         Assert.assertTrue($(WCLocators.SEE_DETAILS).isDisplayed());
         Assert.assertTrue($(WCLocators.HOURLY_FORECAST_MAIN_DIV).isClickable());
     }
+
+    public void windDisplayedHasValue() {
+        waitForCondition().withTimeout(duration).pollingEvery(pollingEvery).until(ExpectedConditions.presenceOfElementLocated(WCLocators.TODAYS_DETAILS));
+        Assert.assertTrue($(WCLocators.TODAYS_DETAILS).isDisplayed());
+        String windValue = $(WCLocators.WIND_VALUE).getText();
+        Assert.assertTrue($(WCLocators.WIND_LABEL).isDisplayed());
+        Assert.assertTrue($(WCLocators.WIND_VALUE).isDisplayed());
+        Assert.assertTrue(!windValue.isEmpty() || windValue != "");
+    }
+
+    public void humidityDisplayedValue() {
+        waitForCondition().withTimeout(duration).pollingEvery(pollingEvery).until(ExpectedConditions.presenceOfElementLocated(WCLocators.HUMIDITY_LABEL));
+        Assert.assertTrue($(WCLocators.HUMIDITY_LABEL).isDisplayed());
+        String humidity = $(WCLocators.HUMIDITY_VALUE).getText();
+        Assert.assertTrue($(WCLocators.WIND_LABEL).isDisplayed());
+        Assert.assertTrue($(WCLocators.WIND_VALUE).isDisplayed());
+        Assert.assertTrue(!humidity.isEmpty() || humidity != "");
+    }
 }

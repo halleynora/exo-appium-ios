@@ -36,25 +36,37 @@ public class NavigateTo {
     @BeforeEach
     void setUp() throws MalformedURLException {
 
+        //Android properties
         String deviceNameAndroid = (String) environmentVariables.getProperty("android-capabilites.deviceName");
+        String platformVersinAndorid = (String) environmentVariables.getProperty("android-capabilites.platformVersion");
+        String UUIDAndorid = (String) environmentVariables.getProperty("android-capabilites.uuid");
+        String newCommandTimeout = (String) environmentVariables.getProperty("android-capabilites.newCommandTimeout");
+        String appLocation = (String) environmentVariables.getProperty("android-capabilites.app");
+        String browserAndroid = (String) environmentVariables.getProperty("webdriver.driver");
+
+        //iOS Properties
+        String platformVersinIOS = (String) environmentVariables.getProperty("ios-capabilites.platformVersion");
+        String deviceNameIOS = (String) environmentVariables.getProperty("ios-capabilites.deviceName");
+        String browserIOS = (String) environmentVariables.getProperty("ios-capabilites.browser");
+
 
 
         if (mobileBrowser.equalsIgnoreCase("iOS")) {
             //        45681C4C-410C-45B0-9FAB-4F78645B4564
             caps.setCapability("platformName", mobileBrowser);
-            caps.setCapability("deviceName","iPhone 8 Plus");
-            caps.setCapability("platformVersion", "15.5");
-            caps.setCapability(CapabilityType.BROWSER_NAME, "Safari");
+            caps.setCapability("deviceName",deviceNameIOS);
+            caps.setCapability("platformVersion", platformVersinIOS);
+            caps.setCapability(CapabilityType.BROWSER_NAME, browserIOS);
             //            caps.setCapability("app", "/Users/halleyshort/Library/Developer/Xcode/DerivedData/WebDriverAgent-ciegwgvxzxdrqthilmrmczmqvrgu/Build/Products/Debug-iphonesimulator/IntegrationApp.app");
         } else if (mobileBrowser.equalsIgnoreCase("android")) {
 
             caps.setCapability(MobileCapabilityType.PLATFORM_NAME, mobileBrowser);
-            caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, "12");
+            caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, platformVersinAndorid);
             caps.setCapability(MobileCapabilityType.DEVICE_NAME, deviceNameAndroid);
-            caps.setCapability(MobileCapabilityType.UDID, "R3CT406J9EE");
-            caps.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 60);
-            caps.setCapability(MobileCapabilityType.APP, "src/test/resources/app-debug.apk");
-            caps.setCapability(MobileCapabilityType.BROWSER_NAME, "Chrome");
+            caps.setCapability(MobileCapabilityType.UDID, UUIDAndorid);
+            caps.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, newCommandTimeout);
+            caps.setCapability(MobileCapabilityType.APP, appLocation);
+            caps.setCapability(MobileCapabilityType.BROWSER_NAME, browserAndroid);
         }
     }
 

@@ -66,39 +66,47 @@ public class SearchStepDefinitions {
 
     @Then("assert in Today's Details that Wind has a value")
     public void assertInTodaySDetailsThatWindHasAValue() {
-
+        wcSearchActions.windDisplayedHasValue();
     }
 
     @Then("assert in Today's Details that Humidity has a value")
     public void assertInTodaySDetailsThatHumidityHasAValue() {
+        wcSearchActions.humidityDisplayedValue();
     }
 
     @Then("assert in Today's Details that Dew Point has a value")
     public void assertInTodaySDetailsThatDewPointHasAValue() {
+        wcSearchActions.dewPointDisplayedValue();
     }
 
     @Then("assert in Today's Details that Pressure has a value")
     public void assertInTodaySDetailsThatPressureHasAValue() {
+        wcSearchActions.pressureDisplayedValue():
     }
 
     @Then("assert in Today's Details that UV Index has a value")
     public void assertInTodaySDetailsThatUVIndexHasAValue() {
+        wcSearchActions.uvIndexDisplayedValue();
     }
 
     @Then("assert in Today's Details that Sunrise has a value")
     public void assertInTodaySDetailsThatSunriseHasAValue() {
+        wcSearchActions.sunriseDisplayedValue();
     }
 
     @Then("assert in Today's Details that Sunset has a value")
     public void assertInTodaySDetailsThatSunsetHasAValue() {
+        wcSearchActions.sunsetDisplayedValue();
     }
 
     @When("See Details button is clicked")
     public void seeDetailsButtonIsClicked() {
+        wcSearchActions.clickSeeDetailsButton();
     }
 
     @Then("assert trending condition is displayed for each graph")
     public void assertTrendingConditionIsDisplayedForEachGraph() {
+        wcSearchActions.trendingGraphsDisplayed();
     }
 
 
